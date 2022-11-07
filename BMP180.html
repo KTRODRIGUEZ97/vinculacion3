@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   </head>
+
+<body>
+
+<!-- ________________________________________________________________________-->           
+<div class="sidebar close">
+
+    <div class="logo-details">
+       <i class='bx bxl-c-plus-plus'></i>
+       <span class="logo_name">Menú de Opsiones</span>
+    </div>
+
+    <!-- Inicio -->           
+
+  <ul class="nav-links">
+<!-- ________________________________________________________________________-->           
+      <li>
+        <a href="Información.html">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name" >Información</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Información.html">Información </a></li>
+          
+        </ul>
+      </li>     
+<!-- ________________________________________________________________________-->      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Sensores</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Sensores</a></li>
+          <li><a href="BMP180.html">BMP180</a></li>
+          <li><a href="Sht30Ecuaplus.html">Sht30 Ecuaplus</a></li>
+          <li><a href="OTTC31.html">OTT C31</a></li>
+          <li><a href="PCE-WSRS485.html">PCE-WS RS485</a></li>
+          <li><a href="t041cTPW405.html">t041c TPW405</a></li>
+        </ul>
+      </li>
+      
+<!-- ________________________________________________________________________-->      
+      <li>
+        <a href="index.html">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="link_name">Análisis</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="index.html">Análisis</a></li>
+        </ul>
+      </li>
+<!-- ________________________________________________________________________-->
+
+  <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="imagenes/2.png" alt="">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name"  align="center" >GAD</div>
+        <div class="job" align="center" >Gobierno Provincial</div>
+        <div class="job" align="center">de Chimborazo</div>
+      </div>
+      <i class='bx bx-log-out' ></i>
+    </div>
+  </li>
+<!--*****************************************-->
+
+  
+</ul>
+
+
+
+
+</div>
+<!-- Fin --> 
+<!-- ***********************************************************************+******************************************* --> 
+<!-- ________________________________________________________________________-->
+
+  <section class="home-section">
+    
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Sensor BMP180</span>
+    </div>
+<!-- Fin --> 
+  <div class="analytics">
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-eye"></span>
+          </div>
+          <div class="analytic-info">
+              <h4>Estructura</h4>                           
+          </div>
+          <div>
+            <img src="imagenes/BMP180.png"  width=70%  height=auto alt="" />
+          </div>
+      </div>
+      
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-clock"></span>
+          </div>
+          <div class="analytic-info">
+              <h4>Descripsion</h4>
+              <h1>10.3M</h1>
+              <img src="imagenes/1.jfif"  alt="" />
+          </div>
+      </div>
+
+   
+
+</section>
+
+  </section>
+
+  <script>
+  let arrow = document.querySelectorAll(".arrow");
+  for (var i = 0; i < arrow.length; i++) {
+    arrow[i].addEventListener("click", (e)=>{
+   let arrowParent = e.target.parentElement.parentElement;//seleccione el padre principal de la flecha
+   arrowParent.classList.toggle("showMenu");
+    });
+  }
+  let sidebar = document.querySelector(".sidebar");
+  let sidebarBtn = document.querySelector(".bx-menu");
+  console.log(sidebarBtn);
+  sidebarBtn.addEventListener("click", ()=>{
+    sidebar.classList.toggle("close");
+  });
+  </script> 
+
+<section>
+  
+
+  
+
+
+
+
+</body>
+</html>

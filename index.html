@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<!-- Created by CodingLab |www.youtube.com/CodingLabYT-->
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+  <head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--<title> Drop Down Sidebar Menu | CodingLab </title>-->
+    <link rel="stylesheet" href="style.css">
+    <!-- Boxiocns CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Sensores -->
+     <title>Medidor Temperatura, Humedad</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+     
+     <script type="text/javascript">
+       google.charts.load('current', {'packages':['gauge']});
+       google.charts.setOnLoadCallback(drawChart);
+       google.charts.setOnLoadCallback(drawChar);
+        google.charts.setOnLoadCallback(drawCha);
+        google.charts.setOnLoadCallback(drawCh);
+        google.charts.setOnLoadCallback(drawC);
+        google.charts.setOnLoadCallback(draw);
+        function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Memory', 80]
+        ]);
+        var options = {
+        width: 250, height: 250,
+        redFrom: 500, redTo: 1000,
+        yellowFrom: 300, yellowTo: 500,
+        greenFrom: 0, greenTo: 300,
+        minorTicks: 100,
+        max: 1000, min: 0,
+        majorTicks: ['0', '1000']
+        };
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+        setInterval(function() {
+            var JSON=$.ajax({
+                url:"http://localhost/a/getData.php",
+                dataType: 'json',
+                async: false}).responseText;
+            var Respuesta=jQuery.parseJSON(JSON);
+        data.setValue(0, 1, Respuesta.temperature);
+        chart.draw(data, options);
+        }, 1300);
+        }
+
+        function drawChar() {
+        var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Rank', 0]
+        ]);
+        var options = {
+        width: 250, height: 250,
+        redFrom: 500, redTo: 1000,
+        yellowFrom: 300, yellowTo: 500,
+        greenFrom: 0, greenTo: 300,
+        minorTicks: 100,
+        max: 1000, min: 0,
+        majorTicks: ['0', '1000']
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_dis'));
+        chart.draw(data, options);
+        
+        setInterval(function() {
+        var JSON=$.ajax({
+        url:"http://localhost/a/getData.php",
+        dataType: 'json',
+        async: false}).responseText;
+        var Respuesta=jQuery.parseJSON(JSON);
+        data.setValue(0, 1, Respuesta.humidity);
+        chart.draw(data, options);  
+        }, 1300);
+        }
+        
+        function drawCha() {
+        var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Rank', 0]
+        ]);
+        var options = {
+        width: 250, height: 250,
+        redFrom: 500, redTo: 1000,
+        yellowFrom: 300, yellowTo: 500,
+        greenFrom: 0, greenTo: 300,
+        minorTicks: 100,
+        max: 1000, min: 0,
+        majorTicks: ['0', '1000']
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_di'));
+        chart.draw(data, options);
+        
+        setInterval(function() {
+        var JSON=$.ajax({
+        url:"http://localhost/a/getData.php",
+        dataType: 'json',
+        async: false}).responseText;
+        var Respuesta=jQuery.parseJSON(JSON);
+        data.setValue(0, 1, Respuesta.humidity);
+        chart.draw(data, options);  
+        }, 1300);
+        }
+
+        function drawCh() {
+        var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Rank', 0]
+        ]);
+        var options = {
+        width: 250, height: 250,
+        redFrom: 500, redTo: 1000,
+        yellowFrom: 300, yellowTo: 500,
+        greenFrom: 0, greenTo: 300,
+        minorTicks: 100,
+        max: 1000, min: 0,
+        majorTicks: ['0', '1000']
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_d'));
+        chart.draw(data, options);
+        
+        setInterval(function() {
+        var JSON=$.ajax({
+        url:"http://localhost/a/getData.php",
+        dataType: 'json',
+        async: false}).responseText;
+        var Respuesta=jQuery.parseJSON(JSON);
+        data.setValue(0, 1, Respuesta.temperature);
+        chart.draw(data, options);  
+        }, 1300);
+        }
+
+        function drawC() {
+        var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Rank', 0]
+        ]);
+        var options = {
+        width: 250, height: 250,
+        redFrom: 500, redTo: 1000,
+        yellowFrom: 300, yellowTo: 500,
+        greenFrom: 0, greenTo: 300,
+        minorTicks: 100,
+        max: 1000, min: 0,
+        majorTicks: ['0', '1000']
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_'));
+        chart.draw(data, options);
+        
+        setInterval(function() {
+        var JSON=$.ajax({
+        url:"http://localhost/a/getData.php",
+        dataType: 'json',
+        async: false}).responseText;
+        var Respuesta=jQuery.parseJSON(JSON);
+        data.setValue(0, 1, Respuesta.temperature);
+        chart.draw(data, options);  
+        }, 1300);
+        }
+
+        function draw() {
+        var data = google.visualization.arrayToDataTable([
+        ['Label', 'Value'],
+        ['Rank', 0]
+        ]);
+        var options = {
+        width: 250, height: 250,
+        redFrom: 500, redTo: 1000,
+        yellowFrom: 300, yellowTo: 500,
+        greenFrom: 0, greenTo: 300,
+        minorTicks: 100,
+        max: 1000, min: 0,
+        majorTicks: ['0', '1000']
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart'));
+        chart.draw(data, options);
+        
+        setInterval(function() {
+        var JSON=$.ajax({
+        url:"http://localhost/a/getData.php",
+        dataType: 'json',
+        async: false}).responseText;
+        var Respuesta=jQuery.parseJSON(JSON);
+        data.setValue(0, 1, Respuesta.humidity);
+        chart.draw(data, options);  
+        }, 1300);
+        }
+
+     </script>
+
+   </head>
+
+<body>
+
+<!-- ________________________________________________________________________-->           
+<div class="sidebar close">
+
+    <div class="logo-details">
+       <i class='bx bxl-c-plus-plus'></i>
+       <span class="logo_name">Menú de Opsiones</span>
+    </div>
+
+    <!-- Inicio -->           
+
+  <ul class="nav-links">
+<!-- ________________________________________________________________________-->           
+      <li>
+        <a href="Información.html">
+          <i class='bx bx-grid-alt' ></i>
+          <span class="link_name" >Información</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="Información.html">Información </a></li>
+          
+        </ul>
+      </li>     
+<!-- ________________________________________________________________________-->      
+      <li>
+        <div class="iocn-link">
+          <a href="#">
+            <i class='bx bx-collection' ></i>
+            <span class="link_name">Sensores</span>
+          </a>
+          <i class='bx bxs-chevron-down arrow' ></i>
+        </div>
+        <ul class="sub-menu">
+          <li><a class="link_name" href="#">Sensores</a></li>
+          <li><a href="BMP180.html">BMP180</a></li>
+          <li><a href="Sht30Ecuaplus.html">Sht30 Ecuaplus</a></li>
+          <li><a href="OTTC31.html">OTT C31</a></li>
+          <li><a href="PCE-WSRS485.html">PCE-WS RS485</a></li>
+          <li><a href="t041cTPW405.html">t041c TPW405</a></li>
+        </ul>
+      </li>
+      
+<!-- ________________________________________________________________________-->      
+      <li>
+        <a href="#">
+          <i class='bx bx-pie-chart-alt-2' ></i>
+          <span class="link_name">Análisis</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Análisis</a></li>
+        </ul>
+      </li>
+<!-- ________________________________________________________________________-->
+
+  <li>
+    <div class="profile-details">
+      <div class="profile-content">
+        <img src="imagenes/2.png" alt="">
+        <!--<img src="image/profile.jpg" alt="profileImg">-->
+      </div>
+      <div class="name-job">
+        <div class="profile_name"  align="center" >GAD</div>
+        <div class="job" align="center" >Gobierno Provincial</div>
+        <div class="job" align="center">de Chimborazo</div>
+      </div>
+      <i class='bx bx-log-out' ></i>
+    </div>
+  </li>
+<!--*****************************************-->
+
+  
+</ul>
+
+
+
+
+</div>
+<!-- Fin --> 
+<!-- ***********************************************************************+******************************************* --> 
+<!-- ________________________________________________________________________-->
+
+  <section class="home-section">
+    
+    <div class="home-content">
+      <i class='bx bx-menu' ></i>
+      <span class="text">Análisis Receptado por lo Sensores</span>
+    </div>
+<!-- Fin --> 
+<!-- Sensor Numero 1 y 2 --> 
+<section>
+  
+  <div class="analytics" >
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-eye"></span>
+          </div>
+          <div class="analytic-info" >
+              <h4>Sensor BMP180 </h4>                
+            </div>
+            <div class="col-xs-6 " >
+              <div id="chart_div" ></div>
+            </div>                              
+      </div>
+      
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-clock"></span>
+          </div>
+          <div class="analytic-info">
+              <h4>Sensor Sht30 Ecuaplus</h4>
+          </div>
+          <div class="col-xs-6 ">
+            <div id="chart_dis" ></div>
+          </div>
+
+      </div>
+</section>
+<!-- Sensor Numero 3 y 4  --> 
+<section>
+  <div class="analytics">
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-eye"></span>
+          </div>
+          <div class="analytic-info">
+              <h4>Sensor OTT C31</h4>       
+          </div>
+          <div class="col-xs-6 ">
+            <div id="chart_di" ></div>
+          </div>
+
+      </div>
+      
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-clock"></span>
+          </div>
+          <div class="analytic-info">
+              <h4>Sensor PCE-WS RS485</h4>
+          </div>
+          <div class="col-xs-6 ">
+            <div id="chart_d" ></div>
+          </div>
+      </div>
+</section>
+
+<!-- Sensor Numero 5 y 6  --> 
+<section>
+  <div class="analytics">
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-eye"></span>
+          </div>
+          <div class="analytic-info">
+              <h4>Sensor OTT C31</h4>       
+          </div>
+          <div class="col-xs-6 ">
+            <div id="chart_" ></div>
+          </div>
+
+      </div>
+      
+      <div class="analytic">
+          <div class="analytic-icon">
+              <span class="las la-clock"></span>
+          </div>
+          <div class="analytic-info">
+              <h4>Sensor PCE-WS RS485</h4>
+          </div>
+          <div class="col-xs-6 ">
+            <div id="chart" ></div>
+          </div>
+      </div>
+</section>
+
+  
+</section>
+
+</section>
+
+<script>
+let arrow = document.querySelectorAll(".arrow");
+for (var i = 0; i < arrow.length; i++) {
+  arrow[i].addEventListener("click", (e)=>{
+ let arrowParent = e.target.parentElement.parentElement;//seleccione el padre principal de la flecha
+ arrowParent.classList.toggle("showMenu");
+  });
+}
+let sidebar = document.querySelector(".sidebar");
+let sidebarBtn = document.querySelector(".bx-menu");
+console.log(sidebarBtn);
+sidebarBtn.addEventListener("click", ()=>{
+  sidebar.classList.toggle("close");
+});
+</script> 
+
+<section>
+
+
+
+</body>
+</html>
